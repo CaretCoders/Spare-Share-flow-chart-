@@ -1,0 +1,88 @@
+%% Flow Chart For Spare share %%
+%%{init: {'theme':'neutral'}}%%
+%%{init: {'look':'handDrawn'}}%%
+%%{init: {'fontSize':'30px'}}%%
+graph TB;
+
+XY(FLOW CHART FOR APPLICATION DEVELOPMENT)
+
+%% Login Page  %% 
+
+G[(Register Yourself OR LOGIN)] ===|As| A{Shop keepers} & B{Suppliers} & C{Waste Management Authorities}
+A ===> |Fill Basic Details|D(KYC)
+%% KYC includes %%
+
+ %%1. Customer/Supplier Name & ID %%
+ %%2. Business Details (Name, Address & Registration) %%
+ %%3. Customer/Supplier Contact details (Phone number & E-mail) %%
+ 
+B ===> |Register Details|E(KYC)
+C ===> F(Details)
+D ===> H{Shopkeeper's Home Page}
+E ===> I{Supplier's Home Page}
+F ===> J{Authority's Home Page}
+
+%% Profile Icon with Name on Top left Corner %%
+
+H & I & J === |Profile icon|K[[Profile page]] --- KE(Logout)
+
+%% Hamburger icon on Top Right Corner %%
+
+H & I & J <---> KX[[Hamburger icon Side bar]] --- KA(Home) --- KB(Subscription) --- KC(Setttings) --- KD(Help & Support)
+
+
+
+
+
+%%CUSTOMER's DASH BOARD%%
+H ===> HA[[CUSTOMERS DASH BOARD]] --- HB(SEARCH BAR) & HC(BLOCKS) 
+
+%% Uplaod AND Remove Listing %%
+%% A Interface to Select Spare parts %%
+HC --- |Uplaod or Remove|HCA(Add To Marketplace)
+HCA --- |Filter or Search Brand/Model/Condition/IMEI/Description/Image|HCAA(Add to Market) & HCAB(Remove) --- HCAC(Home)
+
+%% CHATS, Notifications, Trade History %%
+HC --- HCB(CHATS) & HD(Notification Window) & HE(Trade History)
+HE --- |Filter by date/model/parts|HEA(Back)
+
+%%SCHEDULE PICK-UP BY CITY E- WASTE MANAGEMENT%%
+HC --- |E- Waste Disposal|HCC(Dump the junk) --- HCCA(Schedule pickup & Authotity and Select location) ---- |Pin Map -location|HCCB(Track Request in Notifications)
+
+%% EXPLORE MARKET PLACE %%
+HB --- HBA(Parts Filter)
+HBA --- |BRAND/MODEL/BY SHOP/BY LOACATION|HBAA(INTERACTIVE SPACE) --- HBAE(SEARCH MARKET PLACE)
+
+
+
+
+%%Supplier's DASH BOARD%%
+I ===> IA[[SUPPLIERS DASH BOARD]] --- IB(SEARCH BAR) & IC(BLOCKS) 
+
+%% Post Bulk Orders %%
+%% A Interface to Select Spare parts %%
+IC --- |Post|ICA(Add To Marketplace)
+ICA --- |Filter or Search Brand/Model/Description/image|ICAA(Add to Market) & ICAB(Remove listing) --- ICAC(Home)
+
+%% CHATS, Notifications, Trade History %%
+IC --- ICB(CHATS) & ID(Notification Window) & IE(Trade History)
+IE --- |Filter by date/model/parts|IEA(Back)
+
+%%SCHEDULE PICK-UP BY CITY E- WASTE MANAGEMENT%%
+IC --- |E- Waste Disposal|ICC(Dump the junk) --- ICCA(Schedule pickup & Authotity and Select location) ---- |Pin Map -location|ICCB(Track Request in Notifications)
+
+%% EXPLORE MARKET PLACE %%
+IB --- IBA(Parts Filter)
+IBA --- |BRAND/MODEL/BY SHOP/BY LOACATION|IBAA(INTERACTIVE SPACE) --- IBAE(SEARCH MARKET PLACE)
+
+
+
+
+%% Authorities Dashboard %%
+J ===> JA[[AUTHORITIES DASH BOARD]] --- JB(BLOCKS)
+
+%% Follow Up On Requests and Post NotificaTIONS
+JB --- |Accept & Reschedule|JBA(View Pickup Requests) & JBB(Notifications)
+JBA --- |Filter Option For Disposable Parts|JBAA(Select Vendor & Accept Request) --- JBAB(History Tracker)
+JBB --- |Post/Delete/Edit|JBBA(Post Notifications)
+
